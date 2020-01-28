@@ -18,3 +18,4 @@ Route::get('/{tweetId}', 'TweetController@showTweet');
 
 Route::post('/deletePost', 'TweetController@deleteTweet');
 Route::post('/', 'TweetController@editTweet');
+Route::get('/layout/{id}','LayoutController@showTweet');
