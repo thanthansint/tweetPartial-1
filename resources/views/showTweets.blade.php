@@ -11,14 +11,18 @@ Tweets
         @csrf
         <button name="id" type="submit" value="{{ $tweet->id }}" >Delete Post</button>
     </form>
+    <form action="/" method="post">
+        @csrf
+        <input type="text" name="author" value="author">
+        <input type="text" name="content" value="tweet">
+        <input type="hidden" name="id" value="{{ $tweet->id }}">
+        <input type="submit" name="submit" value="Edit Tweet">
+    </form>
 @endforeach
 
 @include('header')
 
-<form action="/" method="post">
-    @csrf
-    <input type="text" name="author" value='author'>
-    <input type="text" name="content" value='tweet'>
-    <input type="submit" value="Create Tweet">
-</form>
+@include('tweetForm')
+
+
 @endsection
